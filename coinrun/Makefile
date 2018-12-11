@@ -13,8 +13,8 @@ endif
 ifeq ($(UNAME),Darwin)
   ifneq ("$(wildcard /usr/local/opt/qt5/bin/moc"), "")
     $(info Mac, assumed python3, homebrew branch)
-    MOC =/usr/local/opt/qt5/bin/moc
-    export PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig
+    MOC =/usr/local/opt/qt/bin/moc
+    export PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig
   else
     $(info Mac, assumed python3, anaconda branch)
     MOC =moc

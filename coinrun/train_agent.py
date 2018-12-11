@@ -11,7 +11,7 @@ from coinrun import setup_utils, policies, wrappers, ppo2
 from coinrun.config import Config
 
 def main():
-    args = setup_utils.setup_and_load()
+    config_args = setup_utils.setup_and_load()
 
     comm = MPI.COMM_WORLD
     rank = comm.Get_rank()
@@ -26,7 +26,7 @@ def main():
 
     nenvs = Config.NUM_ENVS
     total_timesteps = int(256e6)
-    save_interval = args.save_interval
+    save_interval = config_args.save_interval
 
     env = utils.make_general_env(nenvs, seed=rank)
 
